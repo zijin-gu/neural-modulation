@@ -1,15 +1,21 @@
 # neural-modulation
 Code for preprint [Modulating human brain responses via optimal natural image selection and synthetic image generation](https://arxiv.org/abs/2304.09225). 
 
-In this work, we performed human brain response modulation on both group level and individual level with two fMRI studies. 
+In this work, we performed human brain response modulation on both group level and individual level with two fMRI studies, as shown in the below figure.
+
 ![alt text](./workflow1.png)
 
-Download the `src` folder [here](https://github.com/zijin-gu/NeuroGen/tree/main/src).
+## How to
+To generate synthetic images, there are some necessary stuff to run the code:
+1. Download the `src` folder [here](https://github.com/zijin-gu/NeuroGen/tree/main/src).
+2. Pretrained fwRF encoding model parameters for 8 NSD subjects can be found [here](https://github.com/zijin-gu/NeuroGen/tree/main/output).
 
-Pretrained fwRF encoding model parameters for 8 NSD subjects can be found [here](https://github.com/zijin-gu/NeuroGen/tree/main/output).
+`synthesize.py` is the script to generate "Max" or "Avg" images. If generating group level images, output predicted brain activation is the averaged activation from 8 NSD encoding model outputs; if individual level, then the linear ensemble method can be used where the linear weights are needed.
+
 
 ## Citation
 Please cite the following work if you find this topic inspires your work.
+The preprint for the fMRI experiments:
 ```
 @article{gu2023modulating,
   title={Modulating human brain responses via optimal natural image selection and synthetic image generation},
@@ -18,6 +24,7 @@ Please cite the following work if you find this topic inspires your work.
   year={2023}
 }
 ```
+The work for personalized encoding model construction:
 ```
 @article{gu2022personalized,
   title={Personalized visual encoding model construction with small data},
@@ -30,6 +37,7 @@ Please cite the following work if you find this topic inspires your work.
   publisher={Nature Publishing Group UK London}
 }
 ```
+The work for introducing NeuroGen:
 ```
 @article{gu2022neurogen,
   title={NeuroGen: activation optimized image synthesis for discovery neuroscience},
