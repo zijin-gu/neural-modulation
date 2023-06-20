@@ -4,11 +4,8 @@ import torch
 from torch import nn
 import numpy as np
 import os
-from models_parallel import center_crop
-from optimizer_stub  import get_optimizers
-from checkpoint_stub import load_checkpoint
-from usetools.Encoding import get_predictions, load_encoding
-from pytorch_pretrained_biggan import (BigGAN, one_hot_from_int, truncated_noise_sample, save_as_images)
+from encoding_tools import load_encoding
+from pytorch_pretrained_biggan import (BigGAN, one_hot_from_int, truncated_noise_sample)
 import matplotlib.pyplot as plt
 
 ROIs_subj = []
@@ -58,6 +55,12 @@ def save_image(img, cate, outdir):
 	plt.imsave(outdir + 'img%d'%cate + '.png', img, format='png')
 
 	return
+
+
+def center_crop(x, current_size, desired_size):
+    start = int((current_size - desired_size)/2)
+    return x[:,:, start:(start + desired_size), start:(start + desired_size)]
+
 
 def synthesize(exptype, model, classifier, maps, weight, num_class, roi, num_steps=300, lr=0.005, wdecay=0.0001, code_len=4096, dims=(227, 227, 3), device=torch.device("cpu"), repeat_time=None):
 	
