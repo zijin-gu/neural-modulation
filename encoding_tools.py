@@ -9,7 +9,7 @@ import pickle
 import math
 
 import src.numpy_utility as pnu
-from src.file_utility import save_stuff, flatten_dict, embed_dict
+from src.file_utility import embed_dict
 
 import torch
 import torch.nn as nn
