@@ -17,7 +17,7 @@ import torch.nn.init as I
 import torch.nn.functional as F
 import torch.optim as optim
 
-from torchmodel.models.alexnet import Alexnet_fmaps
+from alexnet import Alexnet_fmaps
 
 def iterate_range(start, length, batchsize):
     batch_count = int(length // batchsize )
