@@ -9,7 +9,7 @@ In this work, we performed human brain response modulation on both group level a
 To generate synthetic images, there are some necessary stuff to run the code:
 1. Install BigGAN (the one we used) `pip install pytorch-pretrained-biggan`. Other SOTA generative AI models can be a good replacement for BigGAN.
 2. Download the `src` folder [here](https://github.com/zijin-gu/NeuroGen/tree/main/src).
-3. Pretrained fwRF encoding model parameters for 8 NSD subjects can be found [here](https://github.com/zijin-gu/NeuroGen/tree/main/output).
+3. Pretrained fwRF encoding model parameters for 8 NSD subjects can be found [here](https://github.com/zijin-gu/NeuroGen/tree/main/output). Linear weights for NeuroGen subjects are inside `linearparams`.
 
 `synthesize.py` is the script to generate "Max" or "Avg" images. If generating group level images, output predicted brain activation is the averaged activation from 8 NSD encoding model outputs; if individual level, then the linear ensemble method can be used where the linear weights are needed.
 
