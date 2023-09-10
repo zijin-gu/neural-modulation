@@ -69,8 +69,6 @@ for subject in range(1,9):
     
     del image_data, stim_data
     maxroi_idx = ROIs_subj[subject-1].index(args.maxroi)
-    minroi1_idx = ROIs_subj[subject-1].index(args.minroi1)
-    minroi2_idx = ROIs_subj[subject-1].index(args.minroi2)
     pred = np.zeros([len(trn_stim_data), len(ROIs_subj[subject-1])])
     j = 0
     while (j+1)*100 < len(trn_stim_data):
