@@ -82,7 +82,7 @@ for subject in range(1,9):
     if args.type == 'rand':
         h2l_idx = np.argsort(abs(pred[:,maxroi_idx]))
     m = 0
-    plt.figure(figsize=(20,8))
+
     filtered_pred = []
     filtered_img = []
     for i in range(200):
